@@ -1,0 +1,317 @@
+/**
+* imports
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/**
+* Reset CSS
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/**
+* Colours
+*/
+
+:root{
+  --primary-color: #ffff;
+  --secondary-color: rgb(77, 77, 254);
+  --accent-color: rgb(17,17,241);
+  --font-family: "Roboto", serif;
+  --border-light-grey:  rgb(191 191 191);
+}
+
+body{
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+
+h2{
+  margin-bottom: 25px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.page-heading{
+  font-size: 40px;
+  margin: 50px 0;
+}
+
+
+a{
+  font-weight: 400;
+  text-decoration: none;
+  font-size: inherit;
+  color: var(--accent-color);
+}
+
+a:hover{
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+a:visited{
+  color: var(--accent-color);
+}
+
+table, th, td{
+  border: 1px solid rgb(203, 208, 214);
+}
+
+th, td{
+  padding: 6px;
+}
+
+table{
+  width: 100%;
+  margin: 25px 0;
+}
+
+tfoot{
+  font-size: 12px;
+}
+
+th{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.flex-container{
+  display:flex;
+}
+/* *
+* FORM STYLES 
+*/
+
+form{
+  margin: 25px 0;
+}
+
+form div{
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: start;
+  align-items: start;
+}
+
+form div:nth-last-child(2),
+form div:nth-last-child(3){
+  flex-direction: row;
+  column-gap: 16px;
+  align-items: baseline;
+}
+
+form label{
+  font-weight: 500;
+}
+
+form small{
+  font-size: 14px;
+  font-weight: 400px;
+  color: rgb(58, 58, 58);
+}
+
+form input{
+  display: block;
+}
+
+form input,
+form textarea,
+form select,
+form input[type='checkbox']{
+  border: 1px solid var(--border-light-grey);
+  border-radius: 2px;
+  padding-left: 10px;
+}
+form input[type="text"]{
+  padding: 4px 10px;
+}
+form textarea{
+  padding: 10px;
+}
+
+form input[type='submit']{
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+form input[type='submit']:hover{
+  cursor: pointer;
+}
+
+form input[type='checkbox']{
+  border: 1px solid rgb(99, 101, 111);
+}
+
+/**
+* Header, Navigation, Main, Footer Sections
+*/
+
+.grid-container{
+  display: grid;
+  grid-template-areas:
+  'h h h h h h'
+  'n n n n n n'
+  'a m m m m .'
+  'f f f f f f';
+  gap: 25px;
+}
+
+@media (max-width: 600px) {
+  .grid-container{
+    grid-template-areas:
+  'h h h h h h'
+  'n n n n n n'
+  'a a a a a a'
+  'm m m m m m'
+  'f f f f f f';
+  }
+}
+
+/* header, nav, aside, main, footer{
+  border: 1px solid red;
+} */
+
+
+header,footer{
+  background-color: var(--secondary-color);
+  color: #ffff;
+  text-align: center;
+  padding: 10px;
+}
+
+header{
+  grid-area: h;
+  font-size: 24px;
+}
+
+nav{
+  grid-area: n;
+  justify-content: center;
+  padding: 25px 0;
+}
+
+nav ul{
+  column-gap: 25px;
+}
+
+
+nav ul li a{
+  font-weight: 400;
+  font-size: 14px;
+}
+
+aside{
+  grid-area: a;
+  align-self: start;
+  position: sticky;
+  top: 12px;
+  z-index: 9999;
+  background-color: var(--primary-color);
+  padding-left: 25px;
+}
+
+.aside-menu{
+  flex-direction: column;
+  align-items: top;
+  row-gap: 10px;
+}
+
+.aside-menu li a{
+  font-weight: 400;
+}
+
+.aside-menu li a:hover{
+  text-decoration: underline;
+}
+
+main{
+  grid-area: m;
+}
+
+.content p{
+  margin: 25px 0;
+  max-width: 960px;
+  line-height: 36px;
+}
+
+.breadcrumb-menu{
+  display: block;
+  margin-bottom: 25px;
+}
+
+footer{
+  grid-area: f;
+  margin-top: 50px;
+}
+
+/*
+* Components
+*/
+
+.errors{
+  color: red;
+}
+
+.errors ul li{
+  margin: 25px 0;
+}
